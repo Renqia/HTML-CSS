@@ -76,8 +76,11 @@
 
             和自行修改高宽属性的区别：对齐点
 
-        transform : translate(100px,100px) rotate(180deg) scale(1.2)
-        transform : rotate(180deg) translate(100px,100px) scale(1.2)
+        两种混合写法的区别：
+            transform : translate(100px,100px) rotate(180deg) scale(1.2)
+            transform : rotate(180deg) translate(100px,100px) scale(1.2)
+            旋转的过程中，原来用于确定偏移量的点发生了改变，
+            如若可能，一定将移动变化写在动画开头
 
      -->
     <!-- 

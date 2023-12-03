@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05CSS3动画</title>
+</head>
+
+<body>
+    <!-- 
+        和transform的区别：
+            触发条件:
+            使用方式： 为动态变化过程封装 keyframe动画，作为元素属性使用
+              定义：#keyframes{
+                    0%{}
+                    100%{}
+                    }
+              使用：animation-name: move
+            
+        常用的属性：
+            动画名称： animation-name:
+            动画时间： animation-dutation:
+            动画曲线： animation-timing-function:
+                    steps()
+            开始时间： animation-delay:(#0s)
+                    
+            动画次数： animation-iteration-count: #1, infinite
+                    默认为1仅一次，循环播放可用 infinite
+
+            动画方向： animation-direction: reverse
+                    用于控制多次动画之间的衔接
+            
+            动画终止状态：animation-fill-mode: backwards;
+                    默认播放完毕恢复起始状态，
+            
+            动画播放状态：animation-play-state: paused;
+        
+     -->
+    <style>
+        div {
+            animation-name: move;
+            animation-duration: 1s;
+            animation-timing-function: ease;
+            animation-delay: 0s;
+            animation-iteration-count: 1;
+            animation-direction: reverse;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+            animation: move 2s linear 0s infinite alternate forwards;
+        }
+    </style>
+
+</body>
+
+</html>

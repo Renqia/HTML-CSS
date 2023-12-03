@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06大数据热点图</title>
+    <style>
+        body {
+            background-color: #333;
+        }
+
+        /* 图片为透明白色，需要把背景色调暗 */
+        .map {
+            position: relative;
+            width: 747px;
+            height: 617px;
+            background: url(media/map.png) no-repeat;
+            margin: 0 auto;
+        }
+
+        /* 以城市为单位进行点图制作 */
+        .city {
+            position: absolute;
+            top: 228px;
+            right: 190px;
+            color: #fff;
+        }
+
+        /* 使用盒子变形制作圆形小点 */
+        .dotted {
+
+            width: 8px;
+            height: 8px;
+            background-color: #09f;
+            /* 四个角的圆锐程度 */
+            border-radius: 50%;
+        }
+
+        /* 属性选择器实现前缀匹配多个 */
+        .city div[class^="pulse"] {
+            position: absolute;
+            /* 父盒子top和子盒子trans50%， 中心对齐city盒子，以实现从中间向四周扩散 */
+            width: 8px;
+            height: 8px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            /* 通过阴影来达成扩放的透明视觉 */
+            box-shadow: 0 0 12px #009dfd;
+            /* 圆化边框 */
+            border-radius: 50%;
+            /* 添加动画 */
+            animation: pulse 1.2s infinite
+        }
+
+        /* 为动画添加多个不同的状态 */
+        .pulse2 {
+            /* 上侧属性选择器多层选择，权重高，这里使用手动提权 */
+            animation-delay: 0.4s !important;
+        }
+
+        .pulse3 {
+            animation-delay: 0.8s !important;
+
+        }
+
+        .tb {
+            top: 500px;
+            right: 80px;
+        }
+
+        .gz {
+            top: 530px;
+            right: 185px;
+        }
+
+        @keyframes pulse {
+            0% {}
+
+            100% {
+                width: 70px;
+                height: 70px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="map">
+        <div class="city">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+        <div class="city tb">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+        <div class="city gz">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

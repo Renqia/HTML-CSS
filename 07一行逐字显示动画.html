@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07一行逐字显示动画</title>
+    <style>
+        div {
+            width: 0px;
+            height: 20px;
+            /* 限制高宽，搭配overflow: hidden避免内容影响盒子大小 */
+            font-size: 20px;
+            border: 1px solid #000;
+            margin: 0 auto;
+            animation: type 5s steps(10);
+            overflow: hidden;
+        }
+
+        @keyframes type {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        世纪佳缘我在这里等你
+    </div>
+
+
+</body>
+
+</html>
