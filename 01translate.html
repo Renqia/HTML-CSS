@@ -5,9 +5,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>01translate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .father {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: skyblue;
+        }
+
+        .child {
+            position: absolute;
+            /* top: 50%;
+            left: 50%; */
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            /* margin-left: -100px;
+            margin-top: -100px; */
+            background-color: pink;
+            /* 添加动画过度 */
+            transition: all 1.0s;
+            /* 使用translate直接动态获取高宽 */
+            /* transform: translate(-50%, -50%); */
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function () {
+            let father = document.querySelector(".father");
+            let child = document.querySelector('.child');
+            //直接动态修改absolute定位一步到位
+            child.style.top = (father.offsetHeight - child.offsetHeight) / 2 + 'px';
+            child.style.left = (father.offsetWidth - child.offsetWidth) / 2 + 'px';
+            // top 和left 的50% 只是对齐左上角位置，真正的中心在child的中心，右侧50%,下方50%
+            // child.style.marginTop = -child.offsetHeight / 2 + 'px';
+            // child.style.marginLeft = -child.offsetWidth / 2 + 'px';
+
+        })
+    </script>
 </head>
 
 <body>
+    <div class="father">
+        <div class="child">
+
+        </div>
+    </div>
+    <!-- 
+        缓入缓出： transition
+        transform
+        移动: tranform
+            单位 px %
+            搭配定位等实现动态宽高居中
+
+        旋转: rotate
+            单位 deg
+            自定义旋转中心点： 
+                transform-origin: left,bottom ,50%, right, center, 
+
+        放缩: scale
+            单位 倍数数字
+                scale(width,height)
+                等比缩放一个数字即可//scale(width/height)
+            自定义缩放中心
+
+            和自行修改高宽属性的区别：对齐点
+
+        transform : translate(100px,100px) rotate(180deg) scale(1.2)
+        transform : rotate(180deg) translate(100px,100px) scale(1.2)
+
+     -->
+    <!-- 
+            ###对行内元素无效
+        translate(x,y)
+        translateX(X)
+        translateY(Y)
+        transform:通过 X，Y控制从原来的位置上移动到哪里
+        %以自身为度量衡，且不会影响其它盒子的布局信息，实现原理类似于修改展示形式
+
+        rorate 顺时针旋转
+        顺时针旋转45度：transform: rorate(45deg)     /
+        顺时针旋转45度：transform: rorate: (-45deg)
+
+      -->
 
 </body>
 

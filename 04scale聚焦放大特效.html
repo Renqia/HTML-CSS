@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04scale聚焦图片放大特效</title>
+    <style>
+        .pic {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            border: 1px solid pink;
+            overflow: hidden;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            transition: all 0.3s;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        ul li {
+            float: left;
+            /* 居中对其内容 */
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            /* 去除黑色圆点 */
+            list-style: none;
+            margin: 10px;
+            border: 1px solid pink;
+            /* 圆化边框 */
+            border-radius: 50%;
+            /* 缓入动画 */
+            transition: all 0.3s;
+        }
+
+        li:hover {
+            /* 聚焦放大特效 */
+            transform: scale(1.2);
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 图片案例 -->
+    <div class="pic">
+        <a href="">
+            <img src="pic.png" alt="">
+        </a>
+    </div>
+
+    <!-- 分页按钮聚焦放大案例 -->
+    <ul>
+        <li><a href="javascript:;">1</a></li>
+        <li><a href="javascript:;">2</a></li>
+        <li><a href="javascript:;">3</a></li>
+        <li><a href="javascript:;">4</a></li>
+        <li><a href="javascript:;">5</a></li>
+        <li><a href="javascript:;">6</a></li>
+        <li><a href="javascript:;">7</a></li>
+    </ul>
+
+
+</body>
+
+</html>

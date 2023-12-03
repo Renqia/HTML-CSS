@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03聚焦出现隐藏子盒子</title>
+    <style>
+        .father {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            border: 2px solid pink;
+            overflow: hidden;
+        }
+
+        .father::after {
+            content: '子盒子';
+            /* 前后伪元素属于行内元素，自占一行，根据内容调整，没有高宽 */
+            display: block;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            transition: all 0.5s;
+            transform-origin: left bottom;
+            transform: rotate(90deg);
+        }
+
+        .father:hover::after {
+            /* display: block; */
+            transform: rotate(0deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+    </div>
+
+</body>
+
+</html>
