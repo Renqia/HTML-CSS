@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08奔跑的熊大</title>
+    <style>
+        /* 白色的熊，需要调整背景颜色来衬托 */
+        body {
+            position: relative;
+            background-color: #ccc;
+        }
+
+        div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* 每次显示一张熊的状态 */
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            background: url(media/bear.png) no-repeat;
+            /* steps() 切割多步依次显示本身就带有匀速意义，无需添加速度曲线  */
+            animation: run 2s steps(7) infinite, move 10s linear forwards;
+        }
+
+        /* 图片内容动画 */
+        @keyframes run {
+            0% {
+                /* left: 0; */
+                /* 调整的不是显示内容盒子的位置，而是盒子显示的背景图片位置 */
+                background-position: 0 0;
+            }
+
+            100% {
+                /* 显示位置不变，图片位置向左，内容变右， */
+                background-position: -1400px 0;
+                /* 1600-200，本身自带200宽度，有内容的最大偏移量是1400 */
+
+            }
+        }
+
+        /*图片移动动画 */
+        @keyframes move {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                /* 使用定位的父盒子宽度和transalte的自身宽度居中 */
+                left: 50%;
+                /* 配合大移动的匀速 */
+                transition: linear;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+</body>
+
+</html>

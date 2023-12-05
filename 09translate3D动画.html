@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 100px;
+        }
+
+        .box {
+
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px auto;
+            /* transform: translate3d(100px ,100px ,100px); */
+            transform: translateZ(99px);
+            /* transform: translate3d(0,1,0,45deg);
+            通过0,1标明当前轴是否沿用旋转
+            */
+            /* transform-style: flat; */
+            /* 默认不开启3d空间 */
+            transform-style: preserve-3d;
+            /* 保持3d效果，但是需要通过父盒子实现 */
+
+            /* z轴3d效果需要通过透视实现 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        位移
+            translateX/Y/Z/3d()
+
+        旋转:rotateX/Y/Z/3d
+            基本概念：为旋转添加一个围绕的三维轴，绕哪哪不变
+            单位：rotate(deg)
+                Xdeg：正值为从下往上，负值为从上往下
+                    #左手准则：四指的朝向为正方向
+                Ydeg：正逆，负顺，类似于地球的自转
+                    #左手准则，大拇指朝下，四指的朝向就是正方向
+                Zdeg：z轴不变，不产生3d效果，约等于二维旋转效果
+
+
+        透视:perspective 
+            基本概念：一个物体的视觉效果由三方确定：视距，物品的大小和物品的距离
+                视距：使得物品大小正常，没有缩放的眼物距离
+                物品大小：当物品正好在视距下显示的大小
+                物品的距离：通过 translateZ()实现，向人眼部分为正，当完全贴近人眼时，完全遮挡，大小无限
+                    最终的大小效果通过 (perspective- translateZ) /perspective呈现
+            #不能设置元素的非中心透视吗？
+
+        呈现：transform-style
+            #为什么默认不开启3d
+     -->
+    <div class="box">
+        123
+    </div>
+
+</body>
+
+</html>

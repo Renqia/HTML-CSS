@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 标准视口标签 -->
+    <meta name="viewport" content="width=device-width,user-scalable=no,
+     initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>13移动开发</title>
+    <style>
+        div {
+            width: 160px;
+            height: 160px;
+            border: 2px solid black;
+            background: url(media/pig.jpg);
+            /* 等比拉伸,直到一侧触边 */
+            background-size: 160px 160px;
+            /* background-size: cover; */
+            /* 等比缩放，直到完全覆盖 */
+        }
+
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        input {
+            -webkit-appearance: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        视口，PC端和手机端屏幕的冲突导致显示的失误，
+        故出现了meta设置理想视口，避免屏幕内容错误缩放
+
+        meta视口标签：
+            name:
+            content:
+                宽度width：device-width，自适应填满缩放
+                用户缩放权限：user-scalable= no/yes
+                初始缩放比例：initial-scale
+                最大/小缩放比例：maximum、minimum
+
+        二倍图：为同等物理大小提供更多缩放的像素
+            原因：手机端dpi像素密集度高，清晰度比电脑端高很多
+            技术：Retina，视网膜技术，将物理尺寸细分为更多显示单位
+            background-size:背景尺寸
+            单位：px，%（父盒子的填充比例）
+            属性： 
+                cover：等比缩放，直到完全覆盖
+                contain：等比拉伸,直到一侧触边
+
+        移动端技术解决方案：
+            盒子大小模型：border-box（CSS3新增）,content-box(传统模型)
+            特殊样式：
+                a超链接高亮：-webkit-tap-highlight-color: transparent;
+                按钮和输入框自定义样式：-webkit-appearance: none;
+                取消图片和超链接长按右键菜单取消：a，img-webkit-touch-callout: none;
+        
+            
+            
+            
+     -->
+
+    <div class="div"></div>
+
+</body>
+
+</html>
