@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16携程首页案例</title>
+</head>
+
+<body>
+    <!-- 
+        1，项目骨架：文件夹，首页
+        2，初始化：
+            1）初始化normalize，index.css，meta视口标签初始化，字体，去除浏览器默认高亮等
+            2），固定高度，百分比宽度
+                #固定的盒子必须有宽度
+
+        3，搜索模块布局：
+            1)居中：
+                1，margin 0 auto
+                2，left + transform
+            2）内容： 
+                左div（a点击跳转）：
+                    搜索图标：绝对定位，覆盖父盒子显示
+                    汉字内容：padding调整，适配非同层的图标
+                    #CSS3盒子模型下，line-height！=content-height
+                右按钮：
+                    绝对定位调整覆盖
+                    before背景图片显示内容
+                    精灵图二倍图，先缩放后调整，书写相反，background-size:
+                    “我的”，字体调整，
+                阴影，边框补充
+        4，焦点轮播图：
+            1）图片放置：
+            2）padding重定位，避免被上部fix定位盒子覆盖内容
+        5，局部导航栏： local-nav
+            1）多个点击跳转内容：ul>li>a
+            2)大小布局:
+                父盒子初始化,子盒子flex 1平均分配
+            3)内容:
+                图片,文字盒子分开
+                上下排版:y轴主轴,侧轴居中
+            4）图片替换：属性选择器替换背景图片
+        6，nav主导航栏
+            1）主边框：radius，overflow：hidden避免子盒子溢出圆角
+            2）公共栏，nav-common的中间白间距
+                #设置margin，后flex用flex接管空间分配？ 百分比留白，between分配？
+                //大盒子 margin，CSS三 + 白边框
+            3）内部栏：
+                    大小：嵌套flex1，display：flex接管子盒子
+                    按列排布：
+                    白色边框：上面的，第一个盒子，border-bottom
+                    文字阴影
+                #图片底部居中对齐
+            ###背景渐变色 linear-gradient（left,red,blue)
+                         linear-gradient（left top,red,blue)
+                背景渐变必须添加浏览器前缀
+        7,subnav-entry
+            1)大盒子初始化：圆边框，背景色，margin间距，一行一大栏
+            2）小盒子分行显示： flex：20%（相对与父盒子的百分比）
+            3）内容： a+span*2/图片+文字
+     -->
+
+</body>
+
+</html>

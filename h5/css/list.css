@@ -1,0 +1,154 @@
+body {
+    /* 流失布局，百分比分配大小，同时限定范围 */
+    width: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    /* 居中，避免范围过大位置偏移 */
+    margin: 0 auto;
+    /* 初始化字体和一点五倍行间距 */
+    font-size: 14px;
+    font-family: -apple-system, Helvetica, sans-serif;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* app ul 初始化，便于浮动布局 */
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* 调整基线，使app内图片与文字居中对齐 */
+img {
+    vertical-align: middle;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+div {
+    /* css3 盒子模型 */
+    box-sizing: border-box;
+}
+
+.app {
+    height: 45px;
+}
+
+.app ul li {
+    float: left;
+    height: 45px;
+    line-height: 45px;
+    background-color: #333333;
+    /* 文字居中 */
+    text-align: center;
+    color: #fff;
+}
+
+/* 为 app 内各个元素分配空间 */
+.app ul li:nth-child(1) {
+    width: 8%;
+}
+
+.app ul li:nth-child(2) {
+    width: 10%;
+}
+
+.app ul li:nth-child(3) {
+    width: 57%;
+}
+
+.app ul li:nth-child(4) {
+    width: 25%;
+    background-color: #F63515;
+}
+
+/* 二倍图压缩，调整手机显示清晰度 */
+.app ul li:nth-child(1) img {
+    /* 自适应等比调整 */
+    width: 10px;
+}
+
+.app ul li:nth-child(2) img {
+    width: 30px;
+}
+
+
+
+
+.search-wrap {
+    /* 固定显示在上方，并为盒中子元素提供定位 */
+    position: fixed;
+    /* overflow: hidden; */
+    width: 100%;
+    height: 44px;
+    background-color: pink;
+    /* 限定大小 */
+    min-width: 320px;
+    max-width: 640px;
+
+}
+
+/* 布局 */
+/* 使用绝对定位和中间搜索栏布局脱钩 */
+.search-btn,
+.search-login {
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 44px;
+}
+
+.search-btn {
+    left: 0;
+    background-color: skyblue;
+}
+
+.search-login {
+    /* 向右靠齐 */
+    right: 0;
+    /* left: 100%; */
+    color: #fff;
+    line-height: 44px;
+    background-color: purple;
+}
+
+.search {
+    /* 相对定位，为内部按钮提供锚点 */
+    position: relative;
+    height: 30px;
+    background-color: #fff;
+    margin: 0 50px;
+    /* 圆化 */
+    border-radius: 15px;
+    /* 居中对齐 */
+    margin-top: 7px;
+}
+
+/* 内容填充 */
+/* search左侧三横 */
+.search-btn::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 18px;
+    background: url(../images/s-btn.png) no-repeat;
+    /* 两倍图，手动缩小 */
+    background-size: 20px 18px;
+    margin: 14px 0 0 15px;
+}
+
+/* 搜索按钮左侧logo */
+.jd-icon {
+    width: 20px;
+    height: 15px;
+    position: absolute;
+    top: 8px;
+    left: 13px;
+    background: url(../images/jd.png) no-repeat;
+    /* 两倍图，手动缩小 */
+    background-size: 20px 15px;
+}

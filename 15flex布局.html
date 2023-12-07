@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        div {
+            display: flex;
+            /* 元素排列方向 */
+            flex-direction: column-reverse;
+            /*
+            flex-direction: row;
+            flex-direction: row-reverse;
+            flex-direction: column;
+             */
+
+            /* 元素排列方式 */
+            justify-content: flex-start;
+            /* justify-content: flex-end;
+            justify-content: space-around;
+            justify-content: space-between;
+            justify-content: space-evenly; */
+            /* 内容溢出时换行与否 */
+            flex-wrap: nowrap;
+            flex-wrap: wrap;
+            flex-wrap: wrap-reverse;
+            /* 侧轴 */
+            align-items: center;
+            align-items: flex-start;
+            align-items: flex-end;
+            /* 拉伸，高度自适应填满 */
+            align-items: stretch;
+            align-items: center;
+            /* 多行额外的效果 */
+            align-content: space-around;
+            align-content: space-between;
+            /* 子元素侧轴对齐重写 */
+            align-self: start;
+            /* 子盒子自己的顺序调整 */
+            order: 1;
+        }
+    </style> -->
+</head>
+
+<body>
+    <!-- 
+        布局原理：通过父盒子设置flex接管子孩子，形成布局
+
+        常用属性：
+            主轴方向：flex-direction:（row） 
+                范围：x轴/row,row-reverse,y轴column/column-reverse
+                #元素按照轴进行排列，设置为y轴时，就可以上下中心排列
+            内容对齐方式：justify-content：(start)
+                范围：start,end,center,space-around(平均分配剩余空间),space-between(两侧对齐)
+            换行：flex-wrap：(nowrap)
+                范围: nowrap,wrap,wrap-reverse
+                #当父盒子大小不足时，子元素默认通过压缩大小维持原有
+            侧轴：align-items:(flex-start)
+                范围：flex-start,flex-end,center(居中),stretch（拉伸填满）
+                    #仅适用于单行
+                多行:align-content:space-around,space-between
+                    #靠两侧对齐，平分空隙等内容需要多行内容才能实现
+            复合属性：flex-flow：弹性流，复合继承了主轴方向，是否换行
+
+        淘宝圣杯布局：flex：1，父盒子空间权重（剩余空间）
+
+        子盒子侧轴重写：align-self
+
+        子盒子前后调整：order:(0)
+            范围：
+     -->
+    <style>
+        div {
+            width: 80%;
+            height: 300px;
+            background-color: pink;
+            display: flex;
+        }
+
+        div span {
+            width: 150px;
+            height: 100px;
+            background-color: purple;
+            margin: 0 5px;
+        }
+
+        /* 伪类选择器需要紧贴前面的选择器 */
+        div span:nth-child(1) {
+            background-color: skyblue;
+            order: -1;
+        }
+
+        div span:nth-child(2) {
+            background-color: white;
+            order: -1;
+        }
+
+        /* div span :nth-child(2) {
+            background-color: purple;
+            order: -1;
+
+        } */
+    </style>
+
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+
+</body>
+
+</html>
