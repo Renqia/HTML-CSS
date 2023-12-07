@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 媒体查询： 对象，逻辑条件， 操作*/
+        @media screen and (max-width:800px) {
+            body {
+                background-color: pink;
+            }
+        }
+
+        @media screen and (min-width:800px) and (max-width:1200px) {
+            html {
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        rem适配布局
+
+        rem（root em 相对于根/html 的比例）
+            使用场景：对文本大小的响应式大小调整
+            原理：通过唯一的html文件font-size修改,实现多个文本统一对比对象
+            基本单位：rem(相对于html文本大小的倍数)
+
+        媒体查询:对特定媒体施加判断，实现适配量身定做
+            @media mediatype and  mediafeature
+            mediatype:screen(屏幕)，print（打印机）
+            逻辑条件： and not only 
+            mediafeature:
+            #案例：根据媒体宽度改变媒体颜色：
+                媒体查询为三种宽度分别设置：蓝，绿，红的背景颜色
+            
+        2，less
+        3，苏宁易购首页案例
+     -->
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+/* 
+1，变量命名规范
+2，less编译器：将less语法定义的文件转变成css
+    easyLESS插件
+3，父子嵌套
+    直接定义在父选择器的 .father{ .child {} }中
+4，伪类元素选择器，并级选择器：
+    &取消空格的父子关系，直接绑定当前父亲
+*/
+
+// 设置一个值为pink颜色的变量，其名字为@color，通过“@color”进行引用值
+@color :pink;
+
+div {
+    // 调用less变量color
+    background-color: @color;
+}
+
+p {
+    // 变量：一次定义，多次使用
+    background-color: @color;
+}
+
+.header {
+    width: 200px;
+    height: 200px;
+
+    // 多级样式，直接嵌套填写
+    .child {
+        color: red;
+    }
+}
+
+a {
+
+    // 取消后代关系，升为同级
+    &:hover {
+        background-color: pink;
+    }
+
+    &.sister {
+        content: '并集选择器';
+    }
+}

@@ -1,0 +1,36 @@
+/* 
+  1，变量命名规范
+  2，less编译器：将less语法定义的文件转变成css
+      easyLESS插件
+  3，父子嵌套
+      直接定义在父选择器的 .father{ .child {} }中
+  4，伪类元素选择器，并级选择器：
+      &取消空格的父子关系，直接绑定当前父亲
+  5，less运算：
+    范围：变量，颜色
+*/
+div {
+  border: 1px * 3;
+  background-color: pink;
+}
+
+p {
+  background-color: pink;
+}
+
+.header {
+  width: 200px;
+  height: 200px;
+}
+
+.header .child {
+  color: red;
+}
+
+a:hover {
+  background-color: pink;
+}
+
+a.sister {
+  content: '并集选择器';
+}
