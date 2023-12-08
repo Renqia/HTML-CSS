@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        1,common.less设定媒体查询适配
+        2，导入index.less到common.less中
+            把一个css文件内容赋值到另一个文件中 index{ @import 'common';}
+            这样只需要将index引入即可顺带使用common.css
+        3，居中对齐body：margin 0 auto -- 添加width -- width:15rem;
+        4,search-content布局
+            布局：
+                宽高：width：100%：15rem，height：1.76rem
+                居中：left:50%,translateX(-50%)
+                子盒子布局：左右rem分配空间，中间 flex：1补足剩余空间
+                圆角边框：border-radius
+            内容：
+                classify：图片随着高宽一样，使用rem进行缩放
+                login：文字内容：rem进行百分比设置 0.5rem，line-height：1rem
+                search：
+                    input宽度：width:100%,直接填满中间的盒子
+                    圆角边框：border-radius
+                    文字大小：
+                    默认文字：value："厨卫保暖季 每千减白"
+                    上下间距和文本间距： margin，padding
+                    选定的蓝色边框：outline
+
+        5，banner部分制作：直接使用img填充，为其填充rem自适应高宽布局即可
+            width:750rem/@basefont
+            height:368rem/$basefont
+                img:width:100%;height:100%;
+            三段式广告 .ad：
+                结构：div>(a>img)*3
+                布局：(flex:1) *3,img:100%
+
+        6,nav导航栏：
+            结构：nav>ul>(li> (a+span) )*10
+            高宽分配：使用rem直接进行高宽赋值，
+            内容：flex/float 布局,图片在上
+            边距：margin :10rem/@basefont auto, display:block
+            文字居中对齐：li/a :text-align:center
+
+                
+
+     -->
+    
+</body>
+</html>

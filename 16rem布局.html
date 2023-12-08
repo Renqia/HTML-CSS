@@ -37,9 +37,14 @@
             mediafeature:
             #案例：根据媒体宽度改变媒体颜色：
                 媒体查询为三种宽度分别设置：蓝，绿，红的背景颜色
-            
+                #区间通过 min and max来限定闭区间实现
+        媒体查询引入资源：通过对不同的媒体状况引入不同的CSS文件，实现较大的网页改变
+            style320，style640
+                <link rel="stylesheet" href="style320.css" media="screen and (min-width: 320px)">
+                <link rel="stylesheet" href="style640.css" media="screen and (min-width: 640px)">
         2，less
         3，苏宁易购首页案例
+
      -->
 
 </body>
